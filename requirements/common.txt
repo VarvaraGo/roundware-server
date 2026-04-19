@@ -29,7 +29,7 @@ requests>=2.32
 # Used in admin, including Batch Tag Add
 django-formset-js==0.4.0
 # database adapter for PostgreSQL
-psycopg2-binary
+psycopg2
 # geographic distance calculator utilities
 geopy
 # cors support to remove php layer
