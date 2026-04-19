@@ -10,7 +10,7 @@ sys.stdout = sys.stderr
 sys.path.append(PROJECT_ROOT)
 sys.path.append(CODE_ROOT)
 sys.path.append(SETTINGS_ROOT)
-os.environ['DJANGO_SETTINGS_MODULE'] = 'roundware_production'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'roundware.settings.dev'
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
