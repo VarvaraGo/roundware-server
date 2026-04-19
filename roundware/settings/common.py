@@ -274,18 +274,6 @@ CORS_ORIGIN_WHITELIST = [
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
 LOGGING = {}
-    'formatters': {
-        'verbose': {
-            'format': "[%(asctime)s] %(levelname)s <%(name)s.%(funcName)s:%(lineno)s> %(message)s",
-            'datefmt': "%d/%b/%Y %H:%M:%S"
-        },
-        'simple': {
-            'format': "%(asctime)s %(levelname)s <%(name)s.%(funcName)s:%(lineno)s> %(message)s",
-            'datefmt': "%H:%M:%S"
-        },
-    },
-}
-
 # don't use MemoryFileUploadHandler since we want to scan from file path
 # for viruses.  Buffer scanning with pyclamav is not fully secure and is not
 # included in recent versions.
