@@ -276,32 +276,26 @@ CORS_ORIGIN_WHITELIST = [
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+
     'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler',
-            'formatter': 'verbose',
-        },
-        'file': {
-            'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': '/var/log/roundware',
-            'formatter': 'verbose',
+        'console': {
+            'class': 'logging.StreamHandler',
         },
     },
-    # consider adding mail_admins to the handlers below as needed
+
     'loggers': {
         'django.request': {
-            'handlers': ['file'],
+            'handlers': ['console'],
             'level': 'ERROR',
             'propagate': True,
         },
-        # The roundware system logger.
         'roundware': {
+            'handlers': ['console'],
             'level': 'DEBUG',
-            'handlers': ['file'],
+            'propagate': False,
         },
     },
+}
     'formatters': {
         'verbose': {
             'format': "[%(asctime)s] %(levelname)s <%(name)s.%(funcName)s:%(lineno)s> %(message)s",
