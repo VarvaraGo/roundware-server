@@ -273,7 +273,9 @@ CORS_ORIGIN_WHITELIST = [
 # the site admins on every HTTP 500 error.
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
-LOGGING = {}
+LOGGING = {
+    'version': 1,
+}
 # don't use MemoryFileUploadHandler since we want to scan from file path
 # for viruses.  Buffer scanning with pyclamav is not fully secure and is not
 # included in recent versions.
