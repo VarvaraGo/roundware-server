@@ -275,6 +275,23 @@ CORS_ORIGIN_WHITELIST = [
 # more details on how to customize your logging configuration.
 LOGGING = {
     'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'WARNING',
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
 }
 # don't use MemoryFileUploadHandler since we want to scan from file path
 # for viruses.  Buffer scanning with pyclamav is not fully secure and is not
