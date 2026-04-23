@@ -145,7 +145,8 @@ MEDIA_URL = '/rwmedia/'
 # This should be the path to the 'static' directory at the root of the
 # roundware-server installation.
 # Example: "/home/ubuntu/roundware-server/static/"
-STATIC_ROOT = "/var/www/roundware/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
